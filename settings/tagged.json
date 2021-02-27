@@ -1,0 +1,1 @@
+{"path": "datasets/tagged", "embedding_size": 128, "depth": 2, "latent_dim": 128, "samples": 20, "batch_size": 512, "batch_timestep": 40, "eval": 10, "snapshots": 1000, "dropout": 0, "delta": 2, "batch_full": 10000, "epochs_offline": 8, "train_offline": 10, "plot_tsne": 3000, "priority_forward": 10, "edge_feats": 8, "n_sampling_workers": 0}

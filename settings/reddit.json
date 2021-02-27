@@ -1,0 +1,1 @@
+{"path": "datasets/reddit", "embedding_size": 600, "depth": 2, "latent_dim": 600, "samples": 30, "batch_size": 1024, "batch_timestep": 50, "eval": 8, "snapshots":5000, "dropout": 0, "delta": 4, "batch_full": 900, "epochs_offline": 32, "train_offline": 600, "plot_tsne": 5000, "priority_forward": 2, "edge_feats": 0}

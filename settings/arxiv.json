@@ -1,0 +1,1 @@
+{"path": "datasets/arxiv", "embedding_size": 32, "depth": 2, "latent_dim": 32, "samples": 40, "batch_size": 32, "batch_timestep": 1, "eval": 7, "snapshots": 3500, "dropout": 0, "delta": 45, "batch_full": 1024, "epochs_offline": 1, "train_offline": 580, "plot_tsne": 10000, "priority_forward": 1, "edge_feats": 0, "n_sampling_workers": 0}

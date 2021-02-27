@@ -1,0 +1,1 @@
+{"path": "datasets/pubmed", "embedding_size": 32, "depth": 2, "latent_dim": 32, "samples": 45, "batch_size": 32, "batch_timestep": 2, "eval": 4, "snapshots": 400, "dropout": 0, "delta": 14, "batch_full": 1024, "epochs_offline": 8, "train_offline": 133, "plot_tsne": 500, "priority_forward": 1, "edge_feats": 0, "n_sampling_workers": 0}
