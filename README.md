@@ -1,10 +1,15 @@
-# Priority based sampling
+# Learning on Streaming Graphs with Experience Replay
 
-This project updates an Inductive Graph Neural Network while the graph evolves via a priority-based method for selecting rehearsed samples.
-The priority method is compared with three baselines:
-* Random: trains over vertices selected randomly
+This project applies experience replay to enable continuous graph representation learning in the streaming setting.
+We update an Inductive Graph Neural Network while graph changes arrive as a stream or vertices or edges.
+
+This repository contains the implementation of the following online training methods:
+* Random-Based Rehearsal-RBR: yields a uniform sample of the entire training graph 
+* Priority-Based Rehearsal-PBR: prioritizes datapoints based on the model prediction error
+
+We also provide the following baseline implementations:
 * No-rehearsal: trains over new vertices only
-* Offline: performs multiple epochs over the graph
+* Offline: performs multiple epochs over the entire graph
 
 
 ## Getting Started
@@ -12,10 +17,10 @@ The priority method is compared with three baselines:
 * Clone the repository
 * Install the dependencies
 * This code automatically downloads the required datasets.
-** You can also download and store them in /datasets/:
-*** Pubmed: https://file.perini.me/graphs/pubmed.zip
-*** Bitcoin: https://file.perini.me/graphs/bitcoin.zip
-*** Reddit: http://www.mediafire.com/file/qpvcabh453jzhhb/reddit.zip/file
+  * You can also download and store them in /datasets/:
+  * Pubmed: https://file.perini.me/graphs/pubmed.zip
+  * Bitcoin: https://file.perini.me/graphs/bitcoin.zip
+  * Reddit: http://www.mediafire.com/file/qpvcabh453jzhhb/reddit.zip/file
 * Run the script (using python 3): 
 ```
 python train <args>
@@ -37,7 +42,6 @@ pip3 install -r requirements.txt
 * [Pubmed](https://linqs-data.soe.ucsc.edu/public/Pubmed-Diabetes.tgz) - Galileo Namata, et. al. "Query-driven Active Surveying for Collective Classification." MLG. 2012.
 * [Reddit](http://snap.stanford.edu/graphsage/reddit.zip) - W.L. Hamilton et. al. "Inductive Representation Learning on Large Graphs", NeurIPS 2017
 * [Elliptic Bitcoin](https://www.kaggle.com/ellipticco/elliptic-data-set) - Weber et. al. , "Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks for Financial Forensics", Anomaly Detection in Finance Workshop, 25th SIGKDD Conference on Knowledge Discovery and Data Mining
-* [Social Spammer](https://linqs-data.soe.ucsc.edu/public/social_spammer/) - Shobeir Fakhraei, et al. "Collective spammer detection in evolving multi-relational social networks." KDD, 2015
 
 ## Parameters
 ### Required
