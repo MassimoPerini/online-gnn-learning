@@ -16,11 +16,11 @@ We also provide the following baseline implementations:
 
 * Clone the repository
 * Install the dependencies
-* This code automatically downloads the required datasets.
-  * You can also download and store them in /datasets/:
-  * Pubmed: https://file.perini.me/graphs/pubmed.zip
-  * Bitcoin: https://file.perini.me/graphs/bitcoin.zip
-  * Reddit: http://www.mediafire.com/file/qpvcabh453jzhhb/reddit.zip/file
+* Download the datasets and store them in /datasets/:
+  * Pubmed: https://linqs-data.soe.ucsc.edu/public/Pubmed-Diabetes.tgz
+  * Bitcoin: https://www.kaggle.com/ellipticco/elliptic-data-set
+  * Reddit: http://snap.stanford.edu/graphsage/reddit.zip
+  * Arxiv: https://ogb.stanford.edu/docs/nodeprop/#ogbn-arxiv
 * Run the script (using python 3): 
 ```
 python train <args>
@@ -38,11 +38,11 @@ Install the dependencies:
 pip3 install -r requirements.txt
 ```
 
-## Datasets included
+## Datasets
 * [Pubmed](https://linqs-data.soe.ucsc.edu/public/Pubmed-Diabetes.tgz) - Galileo Namata, et. al. "Query-driven Active Surveying for Collective Classification." MLG. 2012.
 * [Reddit](http://snap.stanford.edu/graphsage/reddit.zip) - W.L. Hamilton et. al. "Inductive Representation Learning on Large Graphs", NeurIPS 2017
 * [Elliptic Bitcoin](https://www.kaggle.com/ellipticco/elliptic-data-set) - Weber et. al. , "Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks for Financial Forensics", Anomaly Detection in Finance Workshop, 25th SIGKDD Conference on Knowledge Discovery and Data Mining
-
+* [Arxiv](https://ogb.stanford.edu/docs/nodeprop/#ogbn-arxiv) - Weihua Hu et. al., "Open Graph Benchmark: Datasets for Machine Learning on Graphs." NeurIPS, 2020.
 ## Parameters
 ### Required
 * ```dataset```: dataset: 'elliptic', 'pubmed', 'reddit' or 'tagged
@@ -81,25 +81,3 @@ python  train pubmed pytorch test_eval.csv tsne_1 --eval 10 --batch_timestep 20 
 ```
 Runs the code using pytorch and the reddit pubmed. Results will be stored in test_eval.csv and TSNE plots in the tsne_1 folder.
 The model is evaluated every 10 snapshots and 20 batches are trained in every timestep. The offline model is trained for 25 epochs. GPU accelleration is enabled.
-
-
-## Add new datasets
-
-Add a new dynamic graph:
-* Create a new folder in train/datasets
-* Vertex ids must be integers (0 to <n. vertices>)
-
-In the folder the following files should be stored:
-
-* ```graph.adjlist```: The graph adjacency list
-* ```feat_data.npy```: The vertex features: a (n. vertices, #features) matrix. Each row stores the features of a vertex. The row index is the vertex id.
-* ```targets.npy```: The labels: a (n. vertices, 1) matrix. Each row stores a label. The row index is the vertex id.
-* ```vertex_timestamp.json``` or ```edge_timestamp.json```: In the first case, a json map <vertex id, timestamp>, in the second one, a map <edge, timestamp> where the edge is "(first vertex, second vertex)"
-
-Then, create a <dataset>.py file in train/dataset_utils and implement:
-  
-```
-def load(path, snapshots=100):
-```
-
-This method should return a numpy matrix of features, a numpy matrix of targets, an instance of ```DynamicGraphVertex``` or ```DynamicGraphEdge``` and the number of classes in the dataset.
