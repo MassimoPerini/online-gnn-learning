@@ -1,1 +1,0 @@
-{"path": "datasets/bitcoin", "embedding_size": 256, "depth": 2, "latent_dim": 256, "samples": 45, "batch_size": 32, "batch_timestep": 80, "eval": 2, "snapshots": 200, "dropout": 0, "delta": 6, "batch_full": 1024, "epochs_offline": 15, "train_offline": 65, "plot_tsne": 70, "priority_forward": 30, "edge_feats": 0, "n_sampling_workers": 3}

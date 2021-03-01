@@ -1,1 +1,0 @@
-{"path": "datasets/flickr", "embedding_size": 256, "depth": 2, "latent_dim": 256, "samples": 35, "batch_size": 64, "batch_timestep": 30, "eval": 4, "snapshots": 400, "dropout": 0, "delta": 3, "batch_full": 1024, "epochs_offline": 10, "train_offline": 133, "plot_tsne": 500, "priority_forward": 2, "edge_feats": 0, "n_sampling_workers": 0}
