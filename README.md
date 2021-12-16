@@ -16,7 +16,7 @@ We also provide the following baseline implementations:
 
 * Clone the repository
 * Install the dependencies
-* Download the datasets and store them in /datasets/:
+* Datasets:
   * Pubmed: https://linqs-data.soe.ucsc.edu/public/Pubmed-Diabetes.tgz
   * Bitcoin: https://www.kaggle.com/ellipticco/elliptic-data-set
   * Reddit: http://snap.stanford.edu/graphsage/reddit.zip
